@@ -6,7 +6,7 @@ using std::endl;
 
 #include <iomanip>
 
-using std::noskipws;	//white space пробелы табуляция перенос строки
+using std::noskipws;	//white space: пробелы, табуляция, перенос строки
 
 int main()
 {
@@ -14,6 +14,7 @@ int main()
 	char ch;
 	cout << "Введите символ: " << endl;
 	cin >> ch;
+  printf("%c %d\n", ch, ch);
 	cout << "символ " << ch << ", код " << (int)ch << endl;	//cout самостоятельно корректно определяет тип, который ему передают
 	cout << endl;
 

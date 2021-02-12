@@ -51,15 +51,15 @@ struct Time
 	{
 		return (0 <= hour && hour <= 6);
 	}
-	int convertToSeconds ()
+	int convertToSeconds()
 	{
 		return 3600*hour + 60*minute+second;
 	}
-	int diff(Time &tmp)
+	int diff(const Time &tmp)
 	{
 		return convertToSeconds() - tmp.convertToSeconds();
 	}
-	bool biggerThan(Time &tmp)
+	bool biggerThan(const Time &tmp)
 	{
 		if (hour > tmp.hour)
 			return true;
@@ -105,6 +105,8 @@ int main()
 
 	cout << "Еще отсечка" << endl;
 	(next.addSecond(61)).printTime();
+	
+  next.addSecond(61).printTime();
 	return 0;
 }
 

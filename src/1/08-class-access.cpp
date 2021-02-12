@@ -54,7 +54,7 @@ int main()
 	Rectangle A, B;
 //	A.a = 2; //error: ‘int Rectangle::a’ is private
 //	A.b = 5; //error: ‘int Rectangle::a’ is private
-// 	cout << A.normalize()	//error: ‘void Rectangle::normalize()’ is private
+// 	A.normalize()	//error: ‘void Rectangle::normalize()’ is private
 
 	A.setSize(2, 5);
 	B.setSize(3, 4);

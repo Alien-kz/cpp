@@ -9,12 +9,20 @@ using std::endl;
 using std::setprecision;	//точность для вещественных чисел
 using std::setw;		//ширины вывода
 using std::setfill;		//пустой символ (по умолчанию - пробел)
-using std::fixed;
+using std::fixed;		//фиксированная точка (вещественных)
+
+// #include <cstdio>
+
+// printf("%7.3f", 2.34) // __2.340
+// std::setw(5) << std::setprecision(3)
 
 int main()
 {
-	//точность
 	double a = 11.23;
+	printf("%07.3f\n", 2.34);
+	cout << setfill('0') << fixed << setprecision(3) << setw(7) << 2.34 << endl;
+
+	//точность
 	for (int p = 0; p < 5; p++)	//обратите внимание, что область видимости переменной p - только внутри цикла
 		cout << "C точностью " << p << " знаков после запятой: " << fixed << setprecision(p) << a << endl;
 	cout << endl;
