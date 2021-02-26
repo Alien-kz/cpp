@@ -7,7 +7,7 @@
 //#include <iostream>
 
 int main(int argc, char **argv) {
-//	std::cout << "QT Hello!" << std::endl;
+
     QApplication app(argc, argv);
     QMainWindow window;
     window.resize(800, 200);
