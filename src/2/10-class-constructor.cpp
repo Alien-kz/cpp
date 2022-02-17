@@ -56,11 +56,11 @@ void Rectangle::normalize()
 }
 void Rectangle::setSize(int a, int b)
 {
-  Rectangle::a = a;
-  Rectangle::b = b;
+	Rectangle::a = a;
+	Rectangle::b = b;
 //	this->a = a;
 //	this->b = b;
-  normalize();
+	normalize();
 }
 
 void Rectangle::print()
@@ -92,18 +92,4 @@ int main()
 
 	return 0;
 }
-
-//A()    +8byte
-//B()    +8byte
-//copy() +0byte т.к. const &
-//C()    +8byte
-//copy() +0byte т.к. const &
-//D()    +8byte
-//~D()   -8byte
-//~C()   -8byte
-//~B()   -8byte
-//~A()   -8byte
-
-// static = STACK = CREATE { = FREE } 
-// dynamic = HEAP = CREATE NEW() = FREE DELETE()
 
