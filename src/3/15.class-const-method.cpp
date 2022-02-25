@@ -4,14 +4,14 @@ using namespace std;
 
 class Test {
 public:
-  const int id = 2;
+    const int id = 2;
 
-  Test(int n) : id(n) {
-  }
+    Test(int n) : id(n) {
+    }
 
-  void print() {
-    cout << id << endl;
-  }
+    void print() {
+        cout << id << endl;
+    }
 };
 
 
@@ -131,9 +131,10 @@ ostream & operator<<(ostream & out, const Square & s)
 
 int main()
 {
-//  Test test(3);
-//  test.print();
-  cout << sizeof(Square) << endl;
+        Test test(3);
+        test.print();
+
+        cout << sizeof(Square) << endl;
 	Square s1, s2(5.0), s3(5.0, Square::WHITE);
 	s3.printColor();
 	cout << endl;

@@ -30,7 +30,7 @@ public:
 
 int Square::counter = 1;
 
-Square::Square(double newSize, Square::Color newColor) : size(newSize), color(newColor), id(counter) 
+Square::Square(double newSize, Square::Color newColor) : size(newSize), color(newColor), id(counter)
 //блок инициализации констант (перечислять через запятую)
 //порядок перечисления должен соответствовать порядку объявления в классе (иначе warning: will be initialized after [-Wreorder])
 {

@@ -10,16 +10,16 @@ private:
 
 protected:
 	string firm;
-	
-	Appliance(string firm_) : 
-		firm(firm_) 
+
+	Appliance(string firm_) :
+		firm(firm_)
 	{
 			shelftime = 12;
 			price = 0;
 	}
-	
-	
-public:	
+
+
+public:
 virtual void print()
 	{
 		cout << firm << " WARANTY: " << shelftime << " year; " << " PRICE: $" << price << " ";
@@ -31,20 +31,20 @@ virtual void print()
 
 
 	int price;
-	Appliance(string firm_, int shelftime_, int price_ = 0) : 
+	Appliance(string firm_, int shelftime_, int price_ = 0) :
 		firm(firm_), shelftime(shelftime_), price(price_)
 	{
-		
-	}	
+
+	}
 };
 
 class Fridge : public Appliance
 {
 	int cool;
-	
+
 public:
-	Fridge(string firm_, int shelftime_, int price_, int cool_) : 
-		Appliance(firm_, shelftime_, price_) 
+	Fridge(string firm_, int shelftime_, int price_, int cool_) :
+		Appliance(firm_, shelftime_, price_)
 	{
 		Fridge::cool = cool;
 	}
@@ -67,9 +67,9 @@ class Microwave : public Appliance
 
 public:
 	Microwave() : time(0), Appliance("SAMSUNG") {}
-	
-	Microwave(string firm_, int shelftime_, int price_, int time_) : 
-		Appliance(firm_, shelftime_, price_) 
+
+	Microwave(string firm_, int shelftime_, int price_, int time_) :
+		Appliance(firm_, shelftime_, price_)
 	{
 		time = time_;
 	}
@@ -78,12 +78,11 @@ public:
 		Appliance::print();
 		cout << " TIME: " << time << " ";
 	}
-	
+
 	void printFirm()
 	{
 		cout << "NO" << endl;
 	}
-	
 };
 
 
@@ -96,13 +95,13 @@ int main()
 	Ptr->printFirm();
 	cout << endl;
 	delete Ptr;
-	
+
 	Ptr = new Microwave("LG", 12, 12000, 3000);
 	Ptr->print(); //‘void Appliance::print()’ is protected
 	cout << endl;
 	Ptr->printFirm();
 	cout << endl;
 	delete Ptr;
-	
+
 	return 0;
 }

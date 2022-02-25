@@ -10,34 +10,34 @@ private:
 
 protected:
 	string firm;
-	
-	Appliance(string firm_) : 
-		firm(firm_) 
+
+	Appliance(string firm_) :
+		firm(firm_)
 	{
 			shelftime = 12;
 			price = 0;
 	}
-	
+
 public:
 	void print()
 	{
 		cout << firm << " WARANTY: " << shelftime << " year; " << " PRICE: $" << price << " ";
 	}
 	int price;
-	Appliance(string firm_, int shelftime_, int price_ = 0) : 
+	Appliance(string firm_, int shelftime_, int price_ = 0) :
 		firm(firm_), shelftime(shelftime_), price(price_)
 	{
-		
-	}	
+
+	}
 };
 
 class Fridge : public Appliance
 {
 	int cool;
-	
+
 public:
-	Fridge(string firm_, int shelftime_, int price_, int cool_) : 
-		Appliance(firm_, shelftime_, price_) 
+	Fridge(string firm_, int shelftime_, int price_, int cool_) :
+		Appliance(firm_, shelftime_, price_)
 	{
 		Fridge::cool = cool;
 	}
@@ -56,9 +56,9 @@ class Microwave : private Appliance
 
 public:
 	Microwave() : time(0), Appliance("SAMSUNG") {}
-	
-	Microwave(string firm_, int shelftime_, int price_, int time_) : 
-		Appliance(firm_, shelftime_, price_) 
+
+	Microwave(string firm_, int shelftime_, int price_, int time_) :
+		Appliance(firm_, shelftime_, price_)
 	{
 		time = time_;
 	}
@@ -85,7 +85,7 @@ int main()
 		cin >> temp;
 		Microwave M(firm, shelftime, price, temp); //[12]
 		Appliance A("LG", 12, 1); //[8]
-//		M = A; //no match for ‘operator=’ 
+//		M = A; //no match for ‘operator=’
 //		A = M; //‘Appliance’ is an inaccessible base of ‘Microwave’ - public:price := private:price
 	}
 	else if (t == 'f')
@@ -94,7 +94,7 @@ int main()
 		cin >> cool;
 		Fridge F(firm, shelftime, price, cool);
 		Appliance A("LG", 12, 1);
-//		F = A; //no match for ‘operator=’ 
+//		F = A; //no match for ‘operator=’
 		A = F; //public:price := publice:price
 		A.print(); //‘void Appliance::print()’ is protected
 	}
